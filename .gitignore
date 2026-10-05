@@ -1,0 +1,18 @@
+# Questa / ModelSim generated files
+work/
+transcript
+*.wlf
+*.log
+*.bak
+
+# Simulator databases
+*.vstf
+*.ucdb
+
+# Temporary files
+*.tmp
+*.swp
+
+# OS files
+.DS_Store
+Thumbs.db
