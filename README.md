@@ -1,8 +1,3 @@
-Yes. You should be able to **copy once and paste once** into GitHub's `README.md` editor.
-
-I’ll give you the entire README as **one single code block** below. Do **not** copy anything outside the code block.
-
-````markdown
 # UART RTL Design & Verification
 
 > An 8-bit UART transmitter and receiver designed in **Verilog HDL** and verified using **Siemens Questa 2024.1**.
@@ -27,7 +22,7 @@ This project implements a complete UART communication path at RTL level, includi
 
 ## 🏗️ Architecture
 
-```text
+`
                          UART SYSTEM
                               │
                               ▼
@@ -51,11 +46,11 @@ This project implements a complete UART communication path at RTL level, includi
                                             │
                                             ▼
                                           Done
-````
+
 
 ### Data Flow
 
-```text
+`
        Parallel Data
              │
              ▼
@@ -71,11 +66,11 @@ This project implements a complete UART communication path at RTL level, includi
             │
             ▼
        Parallel Data
-```
+
 
 The transmitted serial signal is internally connected back to the receiver to verify the complete TX → RX communication path.
 
----
+
 
 ## 🔄 UART Frame Format
 
@@ -85,17 +80,17 @@ The transmitted serial signal is internally connected back to the receiver to ve
 | Data      | 8 bits | Payload data, transmitted LSB first     |
 | Stop Bit  |  1 bit | Indicates the end of the frame          |
 
-```text
+
 Idle       Start              Data Bits                         Stop
   1          0          D0 D1 D2 D3 D4 D5 D6 D7                   1
 
 ───────┐   ┌───────────────────────────────────────────────┐   ┌────
        └───┘                                               └───┘
-```
+
 
 ### Example: `41h`
 
-```text
+
 41h = 01000001
 
 UART sends LSB first:
@@ -104,9 +99,9 @@ D0 D1 D2 D3 D4 D5 D6 D7
  1  0  0  0  0  0  1  0
  ↑
 LSB
-```
 
----
+
+
 
 ## 🧩 RTL Modules
 
@@ -118,11 +113,11 @@ LSB
 | `uart_top.v`    | Connects TX and RX for loopback operation              |
 | `uart_top_tb.v` | Self-checking testbench for automated verification     |
 
----
+
 
 ## ⚙️ Transmitter Flow
 
-```text
+`
              ┌─────────┐
              │  IDLE   │
              └────┬────┘
@@ -154,15 +149,15 @@ LSB
              ┌─────────┐
              │  IDLE   │
              └─────────┘
-```
+
 
 The transmitter uses a **shift register** to transmit the 8-bit data **LSB first**.
 
----
+
 
 ## ⚙️ Receiver Flow
 
-```text
+`
              ┌─────────┐
              │  IDLE   │
              └────┬────┘
@@ -194,7 +189,7 @@ The transmitter uses a **shift register** to transmit the 8-bit data **LSB first
              ┌─────────┐
              │ DATA OUT│
              └─────────┘
-```
+
 
 The receiver samples the serial input and reconstructs the original 8-bit byte.
 
@@ -220,7 +215,7 @@ The receiver samples the serial input and reconstructs the original 8-bit byte.
 
 The testbench follows a **self-checking verification approach**.
 
-```text
+`
                  Test Data
                      │
                      ▼
@@ -250,11 +245,11 @@ The testbench follows a **self-checking verification approach**.
            ┌──────┐      ┌──────┐
            │ PASS │      │ FAIL │
            └──────┘      └──────┘
-```
+
 
 The testbench automatically compares the transmitted and received bytes and reports PASS or FAIL.
 
----
+
 
 ## 🔍 Test Cases
 
@@ -268,7 +263,7 @@ The testbench automatically compares the transmitted and received bytes and repo
 
 ### Verification Result
 
-```text
+
 PASS: Sent = 41, Received = 41
 PASS: Sent = 55, Received = 55
 PASS: Sent = aa, Received = aa
@@ -278,13 +273,13 @@ PASS: Sent = ff, Received = ff
 --------------------------------
 ALL TESTS COMPLETED
 --------------------------------
-```
+`
 
 ### Result
 
 **5/5 test cases passed ✅**
 
----
+--
 
 # 📊 Simulation Results
 
@@ -352,7 +347,7 @@ All five test patterns passed successfully.
 
 # 📁 Repository Structure
 
-```text
+``
 uart-rtl-verification/
 │
 ├── rtl/
@@ -372,9 +367,9 @@ uart-rtl-verification/
 │
 ├── .gitignore
 └── README.md
-```
 
----
+
+
 
 # 🛠️ Tools & Technologies
 
@@ -386,11 +381,11 @@ uart-rtl-verification/
 | Debugging       | Questa Waveform Viewer  |
 | Version Control | Git / GitHub            |
 
----
+
 
 # 🎯 Key Concepts Demonstrated
 
-```text
+
 RTL Design
    │
    ├── UART Protocol
@@ -402,9 +397,9 @@ RTL Design
    ├── Testbench Development
    ├── Self-Checking Verification
    └── Waveform Debugging
-```
 
----
+
+
 
 # 🚀 Future Improvements
 
@@ -429,5 +424,4 @@ B.Tech ECE | VLSI | RTL Design | Functional Verification
 
 ```
 
-**This time: select from the first `# UART RTL Design & Verification` all the way to the final three backticks and copy it in one shot.**
-```
+
