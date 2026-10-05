@@ -376,17 +376,6 @@ The project can be extended with:
 - SystemVerilog verification environment
 - UVM-based UART verification
 
----
-
-## 🖼️ Project Poster
-
-A project poster summarizing the UART architecture, RTL design, verification flow, and simulation results can be added here.
-
-<!-- Add poster image here -->
-<!-- ![UART RTL Design & Verification Poster](doc/uart_poster.png) -->
-
----
-
 ## 👨‍💻 Author
 
 ### Sandeep C
